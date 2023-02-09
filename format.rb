@@ -14,6 +14,10 @@ class Format
     Time.now.strftime(@formats.join('-'))
   end
 
+  def success?
+    @unknown_formats.empty?
+  end  
+
   def check_format
     @formats = []
     @unknown_formats = []
@@ -26,4 +30,5 @@ class Format
       end
     end
   end  
-end    
+end   
+ 

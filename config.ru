@@ -1,3 +1,9 @@
 require_relative 'app'
+use Rack::ContentType, "text/plain"
 
-run App.new
+
+ROUTES = {
+  '/time' => App.new
+}
+
+run Rack::URLMap.new(ROUTES)
